@@ -2,6 +2,6 @@
 
 ## Problema
 
-## Atoree
+## Atores
 
 ## Casos de Uso
