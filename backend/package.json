@@ -1,0 +1,30 @@
+{
+  "name": "desenvovimento-web-2025",
+  "version": "1.0.0",
+  "description": "sistema_de_gerenciamento_de_despesas_api_db",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "reset-database": "node src/commands/reset-database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YgorCavalheiroOficial/desenvolvimento-web-2025.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YgorCavalheiroOficial/desenvolvimento-web-2025/issues"
+  },
+  "homepage": "https://github.com/YgorCavalheiroOficial/desenvolvimento-web-2025#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
