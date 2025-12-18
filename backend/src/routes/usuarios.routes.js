@@ -55,4 +55,5 @@ router.delete(
     deletarUsuario
 );
 
+
 export default router;
