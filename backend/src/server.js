@@ -1,40 +1,34 @@
-import express from "express";
-import dotenv from "dotenv";
-import categoriasDespesaRouter from "./routes/categorias_despesa.routes.js";
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+// Importe as rotas
+import authRoutes from './routes/auth.routes.js';
+import despesasRoutes from './routes/despesas.routes.js';
+import categoriasRoutes from './routes/categorias_despesa.routes.js';
+import usuariosRoutes from './routes/usuarios.routes.js';
 
 dotenv.config();
 
 const app = express();
-
-// -----------------------------------------------------------------------------
-// MIDDLEWARE: interpretar JSON do corpo das requisições
-// - Sem isso, req.body seria undefined quando o cliente envia JSON.
-// -----------------------------------------------------------------------------
-app.use(express.json());
-
-// -----------------------------------------------------------------------------
-// ROTA DE BOAS-VINDAS (GET /)
-// - Retorna um “guia rápido” em JSON com os endpoints disponíveis da API.
-// -----------------------------------------------------------------------------
-app.get("/", (_req, res) => {
-  res.json({
-    LISTAR: "GET /api/categorias_despesa",
-    MOSTRAR: "GET /api/categorias_despesa/:id",
-    CRIAR: "POST /api/categorias_despesa  BODY: { nome: 'string', descricao: 'string' }",
-    SUBSTITUIR: "PUT /api/categorias_despesa/:id  BODY: { nome: 'string', descricao: 'string' }",
-    ATUALIZAR: "PATCH /api/categorias_despesa/:id  BODY: { nome?: 'string', descricao?: 'string' }",
-    DELETAR: "DELETE /api/categorias_despesa/:id",
-  });
-});
-
-
-// MONTAGEM DO ROUTER DE CATEGORIAS DE DESPESA
-// CORREÇÃO: Usando a variável renomeada.
-app.use("/api/categorias_despesa", categoriasDespesaRouter);
-
-// -----------------------------------------------------------------------------
-// INICIANDO O SERVIDOR
-// -----------------------------------------------------------------------------
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+// Middlewares
+app.use(cors({
+    origin: 'http://localhost:5173' // Permite acesso apenas do seu frontend Vite
+}));
+app.use(express.json());
+
+// Rotas da API
+app.use('/api/auth', authRoutes); // Rota de Login
+app.use('/api/despesas', despesasRoutes);
+app.use('/api/categorias_despesa', categoriasRoutes);
+app.use('/api/usuarios', usuariosRoutes);
+
+// Rota de Teste Simples
+app.get('/api/status', (req, res) => {
+    res.json({ message: 'Backend rodando perfeitamente!' });
+});
+
+app.listen(PORT, () => {
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
+});

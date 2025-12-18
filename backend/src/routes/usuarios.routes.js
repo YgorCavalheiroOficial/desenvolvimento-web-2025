@@ -1,0 +1,58 @@
+import { Router } from 'express';
+// Importa os middlewares de segurança
+import { verifyToken, authorizeRole } from '../middlewares/auth.js'; 
+// Importa todas as funções do controller
+import { 
+    criarUsuario, 
+    listarUsuarios, 
+    atualizarUsuario, 
+    deletarUsuario 
+} from '/Arquivos do Curso de CC/Quarto semestre/Desenvolvimento Web/trabalho/desenvovimento-web-2025/backend/controllers/usuarios.controller.js';
+
+const router = Router();
+
+// =========================================================================
+// Rota POST: Criar Novo Usuário (Requer Autenticação e Perfil de Admin)
+// Esta rota é essencial para garantir que as senhas sejam hasheadas.
+// Rota: POST /api/usuarios
+// =========================================================================
+router.post(
+    '/', 
+    verifyToken,            // 1. Deve ter um token JWT válido
+    authorizeRole('admin'), // 2. O usuário logado deve ter o perfil 'admin'
+    criarUsuario            // 3. Executa a lógica de hash e inserção no banco
+);
+
+
+// =========================================================================
+// Rota GET: Listar Todos os Usuários (Requer Autenticação e Perfil de Admin)
+// Rota: GET /api/usuarios
+// =========================================================================
+router.get(
+    '/', 
+    verifyToken, 
+    authorizeRole('admin'), 
+    listarUsuarios
+);
+
+
+// =========================================================================
+// Rotas de Edição e Deleção por ID (Requer Autenticação e Perfil de Admin)
+// Rota: PUT /api/usuarios/:id
+// Rota: DELETE /api/usuarios/:id
+// =========================================================================
+router.put(
+    '/:id', 
+    verifyToken, 
+    authorizeRole('admin'), 
+    atualizarUsuario
+);
+
+router.delete(
+    '/:id', 
+    verifyToken, 
+    authorizeRole('admin'), 
+    deletarUsuario
+);
+
+export default router;
