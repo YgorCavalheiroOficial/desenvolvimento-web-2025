@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS despesa (
 
 -- Inserindo valores de exemplo na tabela Usuarios
 INSERT INTO usuarios (nome, email, senha_hash, role) VALUES
-('Admin', 'admin@exemple.com', '$2b$10$Apkcj0VhD46jyhAqBJegzO0HddqACF.eD.fiFJ.DcX.KgWSCiJiXG', 'admin');
+('Admin', 'admin@exemple.com', '$2b$10$35ioGtoEIbM2xCFWptvPNef1aSW/3mCj6hCQbqM9QWGzsP6ifAAfe', 'admin');
 
 -- Inserindo valores de exemplo na tabela Categoria
 INSERT INTO categoria (nome, descricao) VALUES
