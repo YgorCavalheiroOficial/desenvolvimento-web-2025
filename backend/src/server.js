@@ -14,7 +14,11 @@ const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(cors({
-    origin: 'https://desenvolvimento-web-2025-frontend.onrender.com' // Permite acesso apenas do seu frontend Vite
+    origin: [
+        // Permite acesso apenas do seu frontend Vite
+        'http://localhost:5173',
+        'https://desenvolvimento-web-2025-frontend.onrender.com'
+    ] 
 }));
 app.use(express.json());
 
