@@ -11,7 +11,6 @@ export const criarDespesa = async (req, res) => {
     const usuarioLogadoId = req.user.id; 
     
     // Regra de segurança: Usuário comum (role !== 'admin') só pode criar para si.
-    // Esta validação é importante, mesmo que o frontend já defina o user.id.
     if (req.user.role !== 'admin' && usuario_id !== usuarioLogadoId) {
         return res.status(403).json({ erro: "Você só pode criar despesas para sua própria conta." });
     }

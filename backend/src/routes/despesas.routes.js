@@ -20,12 +20,12 @@ router.get("/", verifyToken, async (req, res) => { // verifyToken já injeta req
             queryText = "SELECT * FROM despesa WHERE usuario_id = $1 ORDER BY id DESC";
             queryParams.push(req.user.id); // req.user.id vem do JWT
         }
-        // Se req.user.role === 'admin', a query permanece "SELECT * FROM despesa..." (CORRETO)
+        // Se req.user.role === 'admin', a query permanece "SELECT * FROM despesa..." 
 
         const { rows } = await pool.query(queryText, queryParams);
         res.json(rows);
     } catch (erro) {
-        console.error("Erro ao listar despesas:", erro); // Melhorar o log
+        console.error("Erro ao listar despesas:", erro); 
         res.status(500).json({ erro: "erro interno ao listar despesas" });
     }
 });
@@ -93,15 +93,13 @@ router.post("/", verifyToken, async (req, res) => {
 // ----------------------------------------------------------------------------
 // SUBSTITUIR — PUT /api/despesas/:id (Campos OBRIGATÓRIOS. Requer PATCH para opcionalidade)
 // ----------------------------------------------------------------------------
-// Se você quiser manter todos os campos obrigatórios para PUT, seu código está OK.
-// Mas se o seu frontend usa essa rota para edição parcial, veja o PATCH.
 router.put("/:id", verifyToken, async (req, res) => {
     const id = Number(req.params.id);
     const { usuario_id, categoria_id, titulo, valor, data } = req.body ?? {};
     
     // ... (Validação de campos e restrição de usuario_id para 'user' OK) ...
     if (!Number.isInteger(id) || id <= 0) return res.status(400).json({ erro: "id inválido" });
-    // Se o seu frontend estiver enviando PUT para atualização parcial, ele vai falhar aqui:
+  
     if (!usuario_id || !categoria_id || !titulo || !valor || !data) {
         return res.status(400).json({ erro: "Todos os campos são obrigatórios para PUT." });
     }
@@ -138,7 +136,6 @@ router.put("/:id", verifyToken, async (req, res) => {
 // ----------------------------------------------------------------------------
 // Esta é a rota que lida com a edição onde campos não preenchidos mantêm o valor antigo (usando COALESCE).
 router.patch("/:id", verifyToken, async (req, res) => {
-    // ... (Sua lógica COALESCE e segurança estão perfeitamente implementadas aqui.) ...
     const id = Number(req.params.id);
     const { usuario_id, categoria_id, titulo, valor, data } = req.body ?? {};
 
@@ -181,7 +178,6 @@ router.patch("/:id", verifyToken, async (req, res) => {
 // DELETAR — DELETE /api/despesas/:id (Segurança OK)
 // ----------------------------------------------------------------------------
 router.delete("/:id", verifyToken, async (req, res) => { 
-    // ... (Sua lógica de deleção está perfeitamente implementada aqui.) ...
     const id = Number(req.params.id);
 
     if (!Number.isInteger(id) || id <= 0) return res.status(400).json({ erro: "id inválido" });

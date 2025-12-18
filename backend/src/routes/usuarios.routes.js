@@ -18,9 +18,9 @@ const router = Router();
 // =========================================================================
 router.post(
     '/', 
-    verifyToken,            // 1. Deve ter um token JWT válido
-    authorizeRole('admin'), // 2. O usuário logado deve ter o perfil 'admin'
-    criarUsuario            // 3. Executa a lógica de hash e inserção no banco
+    verifyToken,            
+    authorizeRole('admin'), 
+    criarUsuario            
 );
 
 
