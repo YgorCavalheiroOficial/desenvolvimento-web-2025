@@ -1,0 +1,21 @@
+/* frontend-vite/src/components/ContentArea.css */
+.content-area {
+  flex-grow: 1; /* Garante que ocupe todo o espaço disponível à direita da Sidebar */
+  padding: 30px 40px; /* Espaçamento interno */
+  background-color: var(--bg-dark); /* Mantém o fundo escuro principal */
+  overflow-y: auto; /* Permite rolagem se o conteúdo for muito longo */
+}
+
+/* Estilo para a mensagem Placeholder (caso um CRUD não esteja implementado) */
+.placeholder-card {
+  background-color: var(--bg-card); /* Usa a cor de fundo do card */
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.placeholder-card h3 {
+    color: var(--color-primary); /* Destaca o título */
+    margin-bottom: 10px;
+}

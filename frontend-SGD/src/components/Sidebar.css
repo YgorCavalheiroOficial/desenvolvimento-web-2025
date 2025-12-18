@@ -1,0 +1,47 @@
+/* frontend-vite/src/components/Sidebar.css */
+.sidebar {
+    width: 250px; /* Um pouco mais largo */
+    min-height: 100vh;
+    background-color: var(--color-sidebar-dark);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4); /* Sombra para delimitar */
+    padding: 30px 20px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.6em;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-button {
+    padding: 12px 15px;
+    text-align: left;
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: #383838;
+}
+
+.nav-button.active {
+    background-color: var(--color-primary); /* Destaque verde */
+    font-weight: bold;
+    color: var(--color-sidebar-dark); /* Texto escuro no botão ativo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}

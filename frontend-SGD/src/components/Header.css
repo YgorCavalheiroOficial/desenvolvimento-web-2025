@@ -1,0 +1,45 @@
+/* frontend-vite/src/components/Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #383838; /* Linha divisória sutil */
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: var(--color-text-light);
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.user-info strong {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: var(--color-error);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #C62828;
+}

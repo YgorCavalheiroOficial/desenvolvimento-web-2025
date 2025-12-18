@@ -1,0 +1,120 @@
+/* frontend-vite/src/components/CRUD.css */
+
+/* Títulos */
+.despesas-crud h1, .categorias-crud h1, .usuarios-crud h1 {
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Formulário (Card) */
+.crud-form {
+    background-color: var(--color-surface-dark);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.crud-form h2 {
+    width: 100%;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Inputs e Selects */
+.crud-form input[type="text"], 
+.crud-form input[type="number"],
+.crud-form input[type="email"],
+.crud-form input[type="password"],
+.crud-form input[type="date"],
+.crud-form select {
+    flex: 1 1 200px; /* Flexível para ocupar espaço, mínimo de 200px */
+    padding: 12px;
+    background-color: #383838;
+    color: var(--color-text-light);
+    border: 1px solid #555;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+}
+
+.crud-form input:focus, .crud-form select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* Botões de Ação Principal */
+.crud-form button[type="submit"] {
+    flex: 1 1 150px;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.crud-form button[type="submit"]:hover {
+    background-color: var(--color-primary-hover);
+}
+
+
+/* Tabela de Listagem */
+.crud-table {
+    width: 100%;
+    border-collapse: collapse; /* Bordas unidas */
+    margin-top: 20px;
+    background-color: var(--color-surface-dark);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que bordas do card fiquem por cima */
+}
+
+.crud-table th, .crud-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #383838;
+}
+
+.crud-table th {
+    background-color: #383838; /* Fundo do cabeçalho */
+    color: var(--color-primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.crud-table tbody tr:hover {
+    background-color: #353535; /* Destaque sutil na linha */
+}
+
+/* Botões de Ação na Tabela */
+.action-buttons button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.action-buttons button:hover {
+    opacity: 0.8;
+}
+
+.edit-button {
+    background-color: var(--color-accent); 
+    color: white;
+}
+
+.delete-button {
+    background-color: var(--color-error);
+    color: white;
+}

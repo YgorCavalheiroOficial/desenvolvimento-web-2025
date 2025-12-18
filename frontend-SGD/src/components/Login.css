@@ -1,0 +1,73 @@
+/* Definição de variáveis (se você estiver usando um arquivo de estilos global) */
+/* Exemplo de cores escuras: */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --color-primary: #4caf50; /* Verde */
+    --color-text-light: #e0e0e0;
+    --border-color: #444;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+.login-form {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #333;
+    color: var(--color-text-light);
+    font-size: 16px; /* Para evitar zoom em mobile */
+}
+
+.login-form button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.login-form button:hover:not(:disabled) {
+    background-color: #388e3c;
+}
+
+.login-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #ff5252;
+    background-color: #381b1b;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #ff5252;
+}

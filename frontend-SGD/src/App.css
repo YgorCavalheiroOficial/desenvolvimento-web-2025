@@ -1,0 +1,60 @@
+/* frontend-vite/src/index.css */
+
+/* Definição de Variáveis de Cores (Dark Mode Moderno) */
+:root {
+    --color-background-dark: #1f1f1f; /* Fundo principal */
+    --color-surface-dark: #2c2c2c;    /* Fundo dos painéis e cards */
+    --color-sidebar-dark: #212121;    /* Fundo da Sidebar (um pouco mais escuro) */
+    --color-primary: #4CAF50;         /* Verde Moderno (Ação, Ativo) */
+    --color-primary-hover: #388E3C;   /* Verde mais escuro para hover */
+    --color-accent: #64B5F6;          /* Azul Claro (Destaque) */
+    --color-text-light: #E0E0E0;      /* Texto principal */
+    --color-text-secondary: #B0B0B0;  /* Texto secundário/placeholder */
+    --color-error: #F44336;           /* Vermelho para erros */
+}
+
+/* Reset Básico e Aplicação do Tema */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, #root {
+    font-family: 'Arial', sans-serif; /* Fonte limpa */
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    min-height: 100vh;
+}
+
+/* Estrutura Principal do Aplicativo */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1; /* Ocupa todo o espaço restante */
+    padding: 0 40px 40px 40px; /* Padding ao redor do conteúdo */
+}
+
+/* Mensagens de Erro/Sucesso */
+.error-message {
+    background-color: #3e2723; /* Fundo sutil para erro */
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.access-denied {
+    padding: 30px;
+    text-align: center;
+    color: var(--color-error);
+    font-size: 1.5em;
+    background-color: var(--color-surface-dark);
+    border-radius: 8px;
+    margin-top: 50px;
+}
