@@ -7,7 +7,7 @@ import {
     listarUsuarios, 
     atualizarUsuario, 
     deletarUsuario 
-} from '/Arquivos do Curso de CC/Quarto semestre/Desenvolvimento Web/trabalho/desenvovimento-web-2025/backend/controllers/usuarios.controller.js';
+} from '/Arquivos do Curso de CC/Quarto semestre/Desenvolvimento Web/desenvolvimento-web-2025/backend/controllers/usuarios.controller.js';
 
 const router = Router();
 
