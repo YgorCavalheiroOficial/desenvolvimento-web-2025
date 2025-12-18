@@ -61,9 +61,7 @@ O foco inicial será em **usuários individuais** que desejam acompanhar seus ga
 ## 7) Esboços de algumas telas (wireframes)  
 - Tela de Login  
 - Tela de Cadastro de Despesa  
-- Tela de Lista com resumo mensal  
-
-*Demonstação(TODO)  
+- Tela de Lista com resumo mensal    
 
 ---
 
@@ -125,6 +123,9 @@ O foco inicial será em **usuários individuais** que desejam acompanhar seus ga
 - Um **Usuário** tem muitas **Categorias** (1→N)  
 - Um **Usuário** tem muitas **Despesas** (1→N)  
 - Uma **Despesa** pertence a uma **Categoria** (N→1)  
+
+# Diagrama
+![Diagrama](./Untitled%20diagram-2025-12-18-122627.png)
 ---
 ---
 # 🚀 ENTREGA 1: Backend Funcional (CRUD de Categoria)

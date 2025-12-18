@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS despesa (
 
 -- Inserindo valores de exemplo na tabela Usuarios
 INSERT INTO usuarios (nome, email, senha_hash, role) VALUES
-('Admin', 'admin@exemple.com', '$2b$10$35ioGtoEIbM2xCFWptvPNef1aSW/3mCj6hCQbqM9QWGzsP6ifAAfe', 'admin');
+('Admin', 'admin@exemple.com', '$2b$10$dujnLeg9ykTkdVj9cC494eHW9BXVFXSWORiQDNILAX7pJJ2zyaynm', 'admin');
 
 -- Inserindo valores de exemplo na tabela Categoria
 INSERT INTO categoria (nome, descricao) VALUES
@@ -64,9 +64,9 @@ INSERT INTO categoria (nome, descricao) VALUES
 
 -- Inserindo valores de exemplo na tabela Despesa
 INSERT INTO despesa (usuario_id, categoria_id, titulo, valor, data) VALUES
-(1, 1, 'Supermercado Mensal', 'R$ 550.00', '2023-10-05'),
+(1, 1, 'Supermercado Mensal', 'R$ 550.23', '2023-10-05'),
 (1, 2, 'Combustível', 'R$ 120.50', '2023-10-10'),
-(1, 4, 'Cinema com amigos', 'R$ 80.00', '2023-10-15');
+(1, 4, 'Cinema com amigos', 'R$ 80.81', '2023-10-15');
 
 \echo '@@@@@@@ DADOS INSERIDOS COM SUCESSO @@@@@@@'
 \echo ' '
